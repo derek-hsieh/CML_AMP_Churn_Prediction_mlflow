@@ -223,7 +223,8 @@ if os.environ["STORAGE_MODE"] == "external":
         # This is here to create the table in Hive used be the other parts of the project, if it
         # does not already exist.
         if hive_table not in list(
-            spark.sql("show tables in " + hive_database).toPandas()["tableName"]
+            #spark.sql("show tables in " + hive_database).toPandas()["tableName"]
+            spark.sql("show tables in " + hive_database).select("tableName").collect()
         ):
             print("creating the " + hive_table + " table")
 
