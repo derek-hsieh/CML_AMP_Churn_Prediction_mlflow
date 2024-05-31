@@ -107,6 +107,7 @@
 import os
 import sys
 import subprocess
+import xml.etree.ElementTree as ET
 
 from cmlbootstrap import CMLBootstrap
 from pyspark.sql import SparkSession
